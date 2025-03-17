@@ -11,7 +11,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
       <div className="food-item">
         <div className="food-item-img-container">
           <img
-            src={`http://localhost:4000/images/${image}`}
+            src={`ttps://food-delivery-backend-flws.onrender.com/images/${image}`}
             alt={name}
             className="food-item-img"
           />
