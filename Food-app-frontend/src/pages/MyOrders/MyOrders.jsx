@@ -10,7 +10,7 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     const response = await axios.post(
-      "https://food-delivery-backend-flws.onrender.com/api/order/userorders",
+      "ttps://food-delivery-backend-flws.onrender.com/api/order/userorders",
       {},
       { headers: { token } }
     );
