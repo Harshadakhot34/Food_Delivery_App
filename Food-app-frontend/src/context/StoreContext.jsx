@@ -9,8 +9,8 @@ const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFoodlist] = useState([]);
 
-  //ttps://food-delivery-backend-flws.onrender.com
-  const url = "ttps://food-delivery-backend-flws.onrender.com";
+  //https://food-delivery-backend-flws.onrender.com
+  const url = "https://food-delivery-backend-flws.onrender.com";
 
   const [token, setToken] = useState("");
 
@@ -22,7 +22,7 @@ const StoreContextProvider = ({ children }) => {
     }
     if (token) {
       await axios.post(
-        "ttps://food-delivery-backend-flws.onrender.com/api/cart/add",
+        "https://food-delivery-backend-flws.onrender.com/api/cart/add",
         { itemId },
         { headers: { token } }
       );
@@ -33,7 +33,7 @@ const StoreContextProvider = ({ children }) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (token) {
       await axios.post(
-        "ttps://food-delivery-backend-flws.onrender.com/api/cart/remove",
+        "https://food-delivery-backend-flws.onrender.com/api/cart/remove",
         { itemId },
         { headers: { token } }
       );
@@ -52,13 +52,13 @@ const StoreContextProvider = ({ children }) => {
     return totalAmount;
   };
   const fetchFoodList = async () => {
-    const response = await axios.get("ttps://food-delivery-backend-flws.onrender.com/api/food/list");
+    const response = await axios.get("https://food-delivery-backend-flws.onrender.com/api/food/list");
     setFoodlist(response.data.data);
   };
 
   const loadCartData = async (token) => {
     const response = await axios.post(
-      "ttps://food-delivery-backend-flws.onrender.com/api/cart/get",
+      "https://food-delivery-backend-flws.onrender.com/api/cart/get",
       {},
       { headers: { token } }
     );

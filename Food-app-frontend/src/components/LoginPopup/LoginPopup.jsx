@@ -34,9 +34,9 @@ const LoginPopup = ({ setShowLogin }) => {
 
     let newUrl;
     if (currState === "Login") {
-      newUrl = "ttps://food-delivery-backend-flws.onrender.com/api/user/login";
+      newUrl = "https://food-delivery-backend-flws.onrender.com/api/user/login";
     } else {
-      newUrl = "ttps://food-delivery-backend-flws.onrender.com/api/user/register";
+      newUrl = "https://food-delivery-backend-flws.onrender.com/api/user/register";
     }
 
     try {
