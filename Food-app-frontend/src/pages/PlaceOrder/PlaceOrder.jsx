@@ -58,7 +58,7 @@ const PlaceOrder = () => {
       items: orderItems,
       amount: getTotalCartAmount() + 2,
     };
-    let response = await axios.post("ttps://food-delivery-backend-flws.onrender.com/api/order/place", orderData, {
+    let response = await axios.post("https://food-delivery-backend-flws.onrender.com/api/order/place", orderData, {
       headers: {
         token,
       },
