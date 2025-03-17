@@ -9,7 +9,8 @@ const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFoodlist] = useState([]);
 
-  const url = "http://localhost:4000";
+  //http://localhost:4000
+  const url = "https://food-delivery-backend-flws.onrender.com";
 
   const [token, setToken] = useState("");
 
@@ -21,7 +22,7 @@ const StoreContextProvider = ({ children }) => {
     }
     if (token) {
       await axios.post(
-        "http://localhost:4000/api/cart/add",
+        "https://food-delivery-backend-flws.onrender.com/api/cart/add",
         { itemId },
         { headers: { token } }
       );
@@ -32,7 +33,7 @@ const StoreContextProvider = ({ children }) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (token) {
       await axios.post(
-        "http://localhost:4000/api/cart/remove",
+        "https://food-delivery-backend-flws.onrender.com/api/cart/remove",
         { itemId },
         { headers: { token } }
       );
@@ -51,13 +52,13 @@ const StoreContextProvider = ({ children }) => {
     return totalAmount;
   };
   const fetchFoodList = async () => {
-    const response = await axios.get("http://localhost:4000/api/food/list");
+    const response = await axios.get("https://food-delivery-backend-flws.onrender.com/api/food/list");
     setFoodlist(response.data.data);
   };
 
   const loadCartData = async (token) => {
     const response = await axios.post(
-      "http://localhost:4000/api/cart/get",
+      "https://food-delivery-backend-flws.onrender.com/api/cart/get",
       {},
       { headers: { token } }
     );

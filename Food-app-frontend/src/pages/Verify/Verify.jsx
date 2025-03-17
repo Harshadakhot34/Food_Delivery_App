@@ -7,7 +7,7 @@ const Verify = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-  const url = "http://localhost:4000";
+  const url = "https://food-delivery-backend-flws.onrender.com";
   const navigate = useNavigate();
 
   const verifyPayment = async () => {
